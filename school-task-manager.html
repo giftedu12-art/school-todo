@@ -763,38 +763,39 @@ textarea.form-control {
   #school-task-manager .viz-grid { margin-bottom: 1rem; }
   #school-task-manager .task-form-card { margin-bottom: 1.35rem; }
   #school-task-manager .task-form-card h2 { margin-bottom: .8rem; }
-  #school-task-manager .form-fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem; margin: .7rem 0 1rem; }
-  #school-task-manager .header-actions, #school-task-manager .form-actions, #school-task-manager .calendar-nav { gap: .55rem; flex-wrap: wrap; }
-  #school-task-manager .task-list { display: grid; gap: .65rem; }
-  #school-task-manager .task-item { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: .8rem; padding: .85rem 0; border-bottom: 1px solid var(--border); }
-  #school-task-manager .task-item:first-child { border-top: 1px solid var(--border); }
-  #school-task-manager .task-main { min-width: 0; gap: .75rem; }
-  #school-task-manager .task-title { overflow-wrap: anywhere; }
-  #school-task-manager .task-item.is-done .task-title { color: var(--muted-foreground); text-decoration: line-through; }
-  #school-task-manager .task-meta { gap: .55rem; flex-wrap: wrap; }
-  #school-task-manager .due { color: var(--muted-foreground); }
-  #school-task-manager .due.is-late { color: var(--destructive); }
-  #school-task-manager .priority { display: inline-flex; align-items: center; gap: .3rem; color: var(--muted-foreground); }
-  #school-task-manager .priority::before { content: ''; width: .55rem; height: .55rem; border-radius: 50%; background: var(--muted-foreground); }
-  #school-task-manager .priority.high::before { background: var(--destructive); }
-  #school-task-manager .priority.medium::before { background: var(--viz-series-2); }
-  #school-task-manager .priority.low::before { background: var(--viz-series-1); }
-  #school-task-manager .task-actions { gap: .35rem; }
-  #school-task-manager .empty-state { padding: 1.1rem 0; }
-  #school-task-manager .calendar-section { margin: 1.4rem 0; }
-  #school-task-manager .calendar-weekdays, #school-task-manager .calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
-  #school-task-manager .calendar-weekdays { color: var(--muted-foreground); text-align: center; margin-bottom: .35rem; }
-  #school-task-manager .calendar-weekdays span { padding: .35rem 0; }
-  #school-task-manager .calendar-day { min-height: 92px; padding: .38rem; border: 1px solid var(--border); border-width: 1px 0 0 1px; overflow: hidden; }
-  #school-task-manager .calendar-day:nth-child(7n) { border-right-width: 1px; }
-  #school-task-manager .calendar-day:nth-last-child(-n+7) { border-bottom-width: 1px; }
-  #school-task-manager .calendar-day.is-other { color: var(--muted-foreground); background: var(--muted); }
-  #school-task-manager .calendar-day.is-today { box-shadow: inset 0 0 0 2px var(--ring); }
+  #school-task…632 tokens truncated…ol-task-manager .calendar-day.is-today { box-shadow: inset 0 0 0 2px var(--ring); }
   #school-task-manager .calendar-date { display: block; text-align: right; margin-bottom: .25rem; }
   #school-task-manager .calendar-task { display: block; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; margin: .18rem 0 0; padding: .16rem .24rem; border: 0; border-left: 3px solid var(--viz-series-1); background: var(--accent); color: var(--accent-foreground); cursor: pointer; }
   #school-task-manager .calendar-task.is-done { opacity: .58; text-decoration: line-through; }
   @media (max-width: 600px) { #school-task-manager .form-fields { grid-template-columns: 1fr; } #school-task-manager .task-item { grid-template-columns: auto 1fr; } #school-task-manager .task-actions { grid-column: 2; } #school-task-manager .calendar-day { min-height: 70px; padding: .22rem; } #school-task-manager .calendar-task { font-size: .73em; } }
 </style>
+
+<body>
+<main id="school-task-manager" class="container" aria-label="?숆탳 ?낅Т 愿由?>
+  <header class="page-head">
+    <div><p class="eyebrow">SCHOOL TODO</p><h1>?숆탳 ?낅Т 愿由?/h1><p class="text-muted">?좎쭨蹂??낅Т瑜??뺣━?섍퀬 ?붽컙 ?쇱젙?먯꽌 ?뺤씤?섏꽭??</p></div>
+    <div class="header-actions"><button id="theme-toggle" class="btn" type="button" aria-pressed="false">?ㅽ겕 紐⑤뱶</button><button id="clear-completed" class="btn btn-ghost" type="button">?꾨즺 ??ぉ ?뺣━</button></div>
+  </header>
+  <section class="viz-grid" aria-label="?낅Т ?꾪솴">
+    <article class="card viz-stat"><span class="text-muted">?ㅻ뒛 ????/span><strong id="today-count" class="viz-stat-value">0</strong></article>
+    <article class="card viz-stat"><span class="text-muted">吏꾪뻾 以?/span><strong id="active-count" class="viz-stat-value">0</strong></article>
+    <article class="card viz-stat"><span class="text-muted">?꾨즺</span><strong id="done-count" class="viz-stat-value">0</strong></article>
+  </section>
+  <section class="card task-form-card" aria-labelledby="new-task-heading">
+    <h2 id="new-task-heading">???낅Т</h2>
+    <form id="task-form">
+      <label class="form-label">????input id="task-title" class="form-control" required placeholder="?? 媛?뺥넻?좊Ц ?묒꽦"></label>
+      <div class="form-fields">
+        <label class="form-label">遺꾨쪟<select id="task-category" class="form-select"><option>?섏뾽</option><option>?됱젙</option><option>?숆툒</option><option>?곷떞</option><option>湲고?</option></select></label>
+        <label class="form-label">?좎쭨<input id="task-due" class="form-control" type="date"></label>
+        <label class="form-label">?곗꽑?쒖쐞<select id="task-priority" class="form-select"><option value="high">?믪쓬</option><option value="medium" selected>蹂댄넻</option><option value="low">??쓬</option></select></label>
+      </div>
+      <div class="form-actions"><button id="submit-task" class="btn btn-primary" type="submit">?낅Т 異붽?</button><button id="cancel-edit" class="btn btn-ghost" type="button" hidden>痍⑥냼</button></div>
+    </form>
+  </section>
+  <section class="calendar-section card" aria-labelledby="calendar-heading"><div class="section-row"><h2 id="calendar-heading">?붽컙 ?쇱젙</h2><div class="calendar-nav"><button id="previous-month" class="btn btn-ghost" type="button">?댁쟾 ??/button><strong id="month-label"></strong><button id="next-month" class="btn btn-ghost" type="button">?ㅼ쓬 ??/button></div></div><div class="calendar-weekdays" aria-hidden="true"><span>??/span><span>??/span><span>??/span><span>??/span><span>紐?/span><span>湲?/span><span>??/span></div><div id="calendar-grid" class="calendar-grid"></div></section>
+  <section class="card" aria-labelledby="task-list-heading"><div class="section-row"><h2 id="task-list-heading">?낅Т 紐⑸줉</h2><div id="filters" class="header-actions"><button class="btn is-selected" type="button" data-filter="all" aria-pressed="true">?꾩껜</button><button class="btn btn-ghost" type="button" data-filter="today" aria-pressed="false">?ㅻ뒛</button><button class="btn btn-ghost" type="button" data-filter="active" aria-pressed="false">吏꾪뻾 以?/button><button class="btn btn-ghost" type="button" data-filter="done" aria-pressed="false">?꾨즺</button></div></div><div id="task-list" class="task-list"></div><p id="empty-state" class="empty-state text-muted">?깅줉???낅Т媛 ?놁뒿?덈떎.</p></section>
+</main>
 
 <script src="firebase-tasks.js"></script>
 <script>
@@ -1075,6 +1076,5 @@ textarea.form-control {
 
 </body>
 </html>
-
 
 
