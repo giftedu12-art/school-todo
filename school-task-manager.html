@@ -4,20 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://www.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data: https://*.googleapis.com https://*.firebaseio.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <title>School Task Manager</title>
-<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;max-width:736px;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
-</head>
-<body>
-<iframe sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer" title="School Task Manager" srcdoc="&lt;!doctype html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
-&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;self&#x27; &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://www.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data: https://*.googleapis.com https://*.firebaseio.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
-&lt;title&gt;School Task Manager&lt;/title&gt;
-&lt;style&gt;:root {
+<style>:root {
   color-scheme: light dark;
   background-color: var(--background) !important;
 
@@ -55,9 +44,9 @@
   --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
 
   /* Internal implementation variables; not part of the agent contract. */
-  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-sans: -apple-system, system-ui, "Segoe UI", sans-serif;
   --font-mono:
-    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono",
     monospace;
   --font-size-normal: max(11px, var(--font-size-base));
   --font-size-tooltip: calc(var(--font-size-base) - 1px);
@@ -77,7 +66,7 @@
   --radius-2xl: calc(var(--radius) * 1.6);
   --radius-full: 9999px;
   --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
-  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+  --checkmark-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 17'%3E%3Cpath d='M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z'/%3E%3C/svg%3E");
 
   /* Legacy aliases; not part of the current agent contract. */
   --viz-bg: transparent;
@@ -95,11 +84,11 @@
   --color-border-secondary: var(--border);
 }
 
-:root[data-theme=&quot;light&quot;] {
+:root[data-theme="light"] {
   color-scheme: light;
 }
 
-:root[data-theme=&quot;dark&quot;] {
+:root[data-theme="dark"] {
   color-scheme: dark;
 }
 
@@ -107,7 +96,7 @@
   box-sizing: border-box;
 }
 
-html &gt; body {
+html > body {
   margin: 0;
   padding: 5px;
   color: var(--foreground);
@@ -206,7 +195,7 @@ code:not(pre code) {
   vertical-align: top;
 }
 
-.table-responsive &gt; .table :is(th, td) {
+.table-responsive > .table :is(th, td) {
   overflow-wrap: break-word;
 }
 
@@ -235,12 +224,12 @@ code:not(pre code) {
   padding-inline-end: 16px;
 }
 
-.table :is(.text-end, [align=&quot;right&quot;]) {
+.table :is(.text-end, [align="right"]) {
   text-align: end;
   font-variant-numeric: tabular-nums;
 }
 
-.table :is(.text-center, [align=&quot;center&quot;]) {
+.table :is(.text-center, [align="center"]) {
   text-align: center;
 }
 
@@ -268,7 +257,7 @@ code:not(pre code) {
   background: var(--card);
 }
 
-#widget &gt; :not(.card) {
+#widget > :not(.card) {
   width: 100% !important;
   max-width: none !important;
   margin: 0 !important;
@@ -371,7 +360,7 @@ small,
   gap: 8px;
 }
 
-.viz-controls &gt; .form-label {
+.viz-controls > .form-label {
   display: grid;
   min-width: min(100%, 260px);
   flex: 1 1 280px;
@@ -381,7 +370,7 @@ small,
   margin-bottom: 0;
 }
 
-.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+.viz-controls > .form-label > :is(.form-control, .form-range, .form-select) {
   grid-column: 1 / -1;
 }
 
@@ -496,13 +485,13 @@ a.btn {
   color: var(--muted-foreground);
 }
 
-.form-control[type=&quot;file&quot;] {
+.form-control[type="file"] {
   padding: 0;
   overflow: hidden;
   cursor: var(--cursor-interaction, pointer);
 }
 
-.form-control[type=&quot;file&quot;]::file-selector-button {
+.form-control[type="file"]::file-selector-button {
   min-height: 26px;
   margin-right: 8px;
   padding: 0 8px;
@@ -514,22 +503,22 @@ a.btn {
   font: inherit;
 }
 
-.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+.form-control[type="file"]:not(:disabled):hover::file-selector-button {
   background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
 }
 
-.form-control-color[type=&quot;color&quot;] {
+.form-control-color[type="color"] {
   width: 40px;
   height: 28px;
   padding: 3px;
   cursor: var(--cursor-interaction, pointer);
 }
 
-.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+.form-control-color[type="color"]::-webkit-color-swatch-wrapper {
   padding: 0;
 }
 
-.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+.form-control-color[type="color"]::-webkit-color-swatch {
   border: 0;
   border-radius: calc(var(--radius-lg) - 4px);
   corner-shape: superellipse(1.5);
@@ -609,7 +598,7 @@ textarea.form-control {
     box-shadow 150ms;
 }
 
-.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+.form-check:not(.form-switch) .form-check-input[type="checkbox"] {
   border-color: var(--input);
   border-radius: var(--radius-sm);
   corner-shape: superellipse(1.5);
@@ -622,28 +611,28 @@ textarea.form-control {
   background-color: var(--card);
 }
 
-.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+.form-check:not(.form-switch) .form-check-input[type="checkbox"]:checked {
   border-color: var(--primary);
   background-color: var(--primary);
 }
 
 .form-check:not(.form-switch)
-  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  .form-check-input[type="checkbox"]:checked::before {
   display: block;
   width: 100%;
   height: 100%;
   background: var(--primary-foreground);
-  content: &quot;&quot;;
+  content: "";
   mask: var(--checkmark-image) center / 12px 12px no-repeat;
 }
 
-.form-check-input[type=&quot;radio&quot;] {
+.form-check-input[type="radio"] {
   width: 14px;
   height: 14px;
   border-radius: var(--radius-full);
 }
 
-.form-check-input[type=&quot;radio&quot;]:checked {
+.form-check-input[type="radio"]:checked {
   border: 2px solid var(--primary);
   background:
     radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
@@ -672,7 +661,125 @@ textarea.form-control {
 
 .form-check-label {
   color: var(--foreground);
-  cursor: var(--cursor-in…3013 tokens truncated…ager .task-actions { gap: .35rem; }
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: "";
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow:??375 tokens truncated?쫗ain, #school-task-manager .task-actions, #school-task-manager .header-actions, #school-task-manager .form-actions, #school-task-manager .calendar-nav { display: flex; align-items: center; }
+  #school-task-manager .page-head, #school-task-manager .section-row { justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  #school-task-manager .eyebrow { color: var(--muted-foreground); font-size: .78em; letter-spacing: .12em; }
+  #school-task-manager .page-head .text-muted { margin-top: .35rem; }
+  #school-task-manager .viz-grid { margin-bottom: 1rem; }
+  #school-task-manager .task-form-card { margin-bottom: 1.35rem; }
+  #school-task-manager .task-form-card h2 { margin-bottom: .8rem; }
+  #school-task-manager .form-fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem; margin: .7rem 0 1rem; }
+  #school-task-manager .header-actions, #school-task-manager .form-actions, #school-task-manager .calendar-nav { gap: .55rem; flex-wrap: wrap; }
+  #school-task-manager .task-list { display: grid; gap: .65rem; }
+  #school-task-manager .task-item { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: .8rem; padding: .85rem 0; border-bottom: 1px solid var(--border); }
+  #school-task-manager .task-item:first-child { border-top: 1px solid var(--border); }
+  #school-task-manager .task-main { min-width: 0; gap: .75rem; }
+  #school-task-manager .task-title { overflow-wrap: anywhere; }
+  #school-task-manager .task-item.is-done .task-title { color: var(--muted-foreground); text-decoration: line-through; }
+  #school-task-manager .task-meta { gap: .55rem; flex-wrap: wrap; }
+  #school-task-manager .due { color: var(--muted-foreground); }
+  #school-task-manager .due.is-late { color: var(--destructive); }
+  #school-task-manager .priority { display: inline-flex; align-items: center; gap: .3rem; color: var(--muted-foreground); }
+  #school-task-manager .priority::before { content: ''; width: .55rem; height: .55rem; border-radius: 50%; background: var(--muted-foreground); }
+  #school-task-manager .priority.high::before { background: var(--destructive); }
+  #school-task-manager .priority.medium::before { background: var(--viz-series-2); }
+  #school-task-manager .priority.low::before { background: var(--viz-series-1); }
+  #school-task-manager .task-actions { gap: .35rem; }
   #school-task-manager .empty-state { padding: 1.1rem 0; }
   #school-task-manager .calendar-section { margin: 1.4rem 0; }
   #school-task-manager .calendar-weekdays, #school-task-manager .calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
@@ -687,56 +794,56 @@ textarea.form-control {
   #school-task-manager .calendar-task { display: block; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; margin: .18rem 0 0; padding: .16rem .24rem; border: 0; border-left: 3px solid var(--viz-series-1); background: var(--accent); color: var(--accent-foreground); cursor: pointer; }
   #school-task-manager .calendar-task.is-done { opacity: .58; text-decoration: line-through; }
   @media (max-width: 600px) { #school-task-manager .form-fields { grid-template-columns: 1fr; } #school-task-manager .task-item { grid-template-columns: auto 1fr; } #school-task-manager .task-actions { grid-column: 2; } #school-task-manager .calendar-day { min-height: 70px; padding: .22rem; } #school-task-manager .calendar-task { font-size: .73em; } }
-&lt;/style&gt;
+</style>
 
-&lt;script src=&quot;firebase-tasks.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-(() =&gt; {
-  const root = document.getElementById(&#x27;school-task-manager&#x27;);
-  const form = root.querySelector(&#x27;#task-form&#x27;), list = root.querySelector(&#x27;#task-list&#x27;), empty = root.querySelector(&#x27;#empty-state&#x27;);
-  const title = root.querySelector(&#x27;#task-title&#x27;), category = root.querySelector(&#x27;#task-category&#x27;), due = root.querySelector(&#x27;#task-due&#x27;), priority = root.querySelector(&#x27;#task-priority&#x27;);
-  const formHeading = root.querySelector(&#x27;#new-task-heading&#x27;), submitTask = root.querySelector(&#x27;#submit-task&#x27;), cancelEdit = root.querySelector(&#x27;#cancel-edit&#x27;);
-  const filterWrap = root.querySelector(&#x27;#filters&#x27;), calendarGrid = root.querySelector(&#x27;#calendar-grid&#x27;), monthLabel = root.querySelector(&#x27;#month-label&#x27;);
-  const themeToggle = root.querySelector(&#x27;#theme-toggle&#x27;); let filter = &#x27;all&#x27;, editingId = null, monthCursor = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
-  const todayISO = () =&gt; new Date().toISOString().slice(0, 10);
-  const load = () =&gt; { try { return JSON.parse(localStorage.getItem(&#x27;school-tasks-v1&#x27;)) || []; } catch { return []; } };
+<script src="firebase-tasks.js"></script>
+<script>
+(() => {
+  const root = document.getElementById('school-task-manager');
+  const form = root.querySelector('#task-form'), list = root.querySelector('#task-list'), empty = root.querySelector('#empty-state');
+  const title = root.querySelector('#task-title'), category = root.querySelector('#task-category'), due = root.querySelector('#task-due'), priority = root.querySelector('#task-priority');
+  const formHeading = root.querySelector('#new-task-heading'), submitTask = root.querySelector('#submit-task'), cancelEdit = root.querySelector('#cancel-edit');
+  const filterWrap = root.querySelector('#filters'), calendarGrid = root.querySelector('#calendar-grid'), monthLabel = root.querySelector('#month-label');
+  const themeToggle = root.querySelector('#theme-toggle'); let filter = 'all', editingId = null, monthCursor = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
+  const todayISO = () => new Date().toISOString().slice(0, 10);
+  const load = () => { try { return JSON.parse(localStorage.getItem('school-tasks-v1')) || []; } catch { return []; } };
   let tasks = load();
-  const setTheme = dark =&gt; { root.classList.toggle(&#x27;is-dark&#x27;, dark); themeToggle.textContent = dark ? &#x27;?쇱씠??紐⑤뱶&#x27; : &#x27;?ㅽ겕 紐⑤뱶&#x27;; themeToggle.setAttribute(&#x27;aria-pressed&#x27;, dark); localStorage.setItem(&#x27;school-tasks-theme&#x27;, dark ? &#x27;dark&#x27; : &#x27;light&#x27;); };
-  const save = () =&gt; { localStorage.setItem(&#x27;school-tasks-v1&#x27;, JSON.stringify(tasks)); globalThis.saveSchoolTasks?.(tasks); };
-  const dateText = value =&gt; value ? new Intl.DateTimeFormat(&#x27;ko-KR&#x27;, { month: &#x27;long&#x27;, day: &#x27;numeric&#x27;, weekday: &#x27;short&#x27; }).format(new Date(`${value}T00:00:00`)) : &#x27;留덇컧??誘몄젙&#x27;;
-  const priorityText = { high: &#x27;?믪쓬&#x27;, medium: &#x27;蹂댄넻&#x27;, low: &#x27;??쓬&#x27; };
-  function visibleTasks() { const today = todayISO(); return tasks.filter(task =&gt; filter === &#x27;all&#x27; || (filter === &#x27;today&#x27; &amp;&amp; task.due === today &amp;&amp; !task.done) || (filter === &#x27;active&#x27; &amp;&amp; !task.done) || (filter === &#x27;done&#x27; &amp;&amp; task.done)).sort((a, b) =&gt; Number(a.done) - Number(b.done) || (a.due || &#x27;9999&#x27;).localeCompare(b.due || &#x27;9999&#x27;)); }
-  function updateStats() { const today = todayISO(); root.querySelector(&#x27;#today-count&#x27;).textContent = tasks.filter(t =&gt; !t.done &amp;&amp; t.due === today).length; root.querySelector(&#x27;#active-count&#x27;).textContent = tasks.filter(t =&gt; !t.done).length; root.querySelector(&#x27;#done-count&#x27;).textContent = tasks.filter(t =&gt; t.done).length; }
-  function renderCalendar() { const year = monthCursor.getFullYear(), month = monthCursor.getMonth(), first = new Date(year, month, 1), start = first.getDay(), days = new Date(year, month + 1, 0).getDate(), prevDays = new Date(year, month, 0).getDate(); monthLabel.textContent = `${year}??${month + 1}??; let cells = &#x27;&#x27;; for (let index = 0; index &lt; 42; index++) { const day = index - start + 1, inMonth = day &gt;= 1 &amp;&amp; day &lt;= days, date = inMonth ? new Date(year, month, day) : index &lt; start ? new Date(year, month - 1, prevDays - start + index + 1) : new Date(year, month + 1, day - days); const iso = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, &#x27;0&#x27;)}-${String(date.getDate()).padStart(2, &#x27;0&#x27;)}`; const matches = tasks.filter(t =&gt; t.due === iso).slice(0, 3); cells += `&lt;div class=&quot;calendar-day ${inMonth ? &#x27;&#x27; : &#x27;is-other&#x27;} ${iso === todayISO() ? &#x27;is-today&#x27; : &#x27;&#x27;}&quot;&gt;&lt;time class=&quot;calendar-date&quot; datetime=&quot;${iso}&quot;&gt;${date.getDate()}&lt;/time&gt;${matches.map(t =&gt; `&lt;button type=&quot;button&quot; class=&quot;calendar-task ${t.done ? &#x27;is-done&#x27; : &#x27;&#x27;}&quot; data-edit-id=&quot;${t.id}&quot; aria-label=&quot;${escapeHTML(t.title)} ?섏젙&quot;&gt;${escapeHTML(t.title)}&lt;/button&gt;`).join(&#x27;&#x27;)}${tasks.filter(t =&gt; t.due === iso).length &gt; 3 ? `&lt;span class=&quot;text-small&quot;&gt;+${tasks.filter(t =&gt; t.due === iso).length - 3}媛?lt;/span&gt;` : &#x27;&#x27;}&lt;/div&gt;`; } calendarGrid.innerHTML = cells; }
-  function render() { const shown = visibleTasks(); list.innerHTML = shown.map(task =&gt; { const late = !task.done &amp;&amp; task.due &amp;&amp; task.due &lt; todayISO(); return `&lt;article class=&quot;task-item ${task.done ? &#x27;is-done&#x27; : &#x27;&#x27;}&quot;&gt;&lt;label class=&quot;form-check&quot;&gt;&lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; data-action=&quot;toggle&quot; data-id=&quot;${task.id}&quot; ${task.done ? &#x27;checked&#x27; : &#x27;&#x27;} /&gt;&lt;span class=&quot;sr-only&quot;&gt;${task.done ? &#x27;誘몄셿猷뚮줈 蹂寃?#x27; : &#x27;?꾨즺 泥섎━&#x27;}&lt;/span&gt;&lt;/label&gt;&lt;div class=&quot;task-main&quot;&gt;&lt;div&gt;&lt;strong class=&quot;task-title&quot;&gt;${escapeHTML(task.title)}&lt;/strong&gt;&lt;div class=&quot;task-meta text-small&quot;&gt;&lt;span class=&quot;viz-badge&quot;&gt;${escapeHTML(task.category)}&lt;/span&gt;&lt;span class=&quot;due ${late ? &#x27;is-late&#x27; : &#x27;&#x27;}&quot;&gt;${late ? &#x27;湲고븳 吏??쨌 &#x27; : &#x27;&#x27;}${dateText(task.due)}&lt;/span&gt;&lt;span class=&quot;priority ${task.priority}&quot;&gt;${priorityText[task.priority]}&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;task-actions&quot;&gt;&lt;button class=&quot;btn btn-ghost&quot; type=&quot;button&quot; data-action=&quot;edit&quot; data-id=&quot;${task.id}&quot;&gt;?섏젙&lt;/button&gt;&lt;button class=&quot;btn btn-ghost&quot; type=&quot;button&quot; data-action=&quot;delete&quot; data-id=&quot;${task.id}&quot;&gt;??젣&lt;/button&gt;&lt;/div&gt;&lt;/article&gt;`; }).join(&#x27;&#x27;); empty.hidden = shown.length !== 0; updateStats(); renderCalendar(); }
-  function escapeHTML(value) { const node = document.createElement(&#x27;span&#x27;); node.textContent = value; return node.innerHTML; }
-  function resetEditor() { editingId = null; form.reset(); priority.value = &#x27;medium&#x27;; formHeading.textContent = &#x27;???낅Т&#x27;; submitTask.textContent = &#x27;?낅Т 異붽?&#x27;; cancelEdit.hidden = true; }
-  function startEdit(id) { const task = tasks.find(t =&gt; t.id === id); if (!task) return; editingId = id; title.value = task.title; category.value = task.category; due.value = task.due; priority.value = task.priority; formHeading.textContent = &#x27;?낅Т ?섏젙&#x27;; submitTask.textContent = &#x27;?섏젙 ???#x27;; cancelEdit.hidden = false; title.focus(); root.querySelector(&#x27;.task-form-card&#x27;).scrollIntoView({ behavior: &#x27;smooth&#x27;, block: &#x27;center&#x27; }); }
-  form.addEventListener(&#x27;submit&#x27;, event =&gt; { event.preventDefault(); const value = { title: title.value.trim(), category: category.value, due: due.value, priority: priority.value }; if (editingId) tasks = tasks.map(t =&gt; t.id === editingId ? { ...t, ...value } : t); else tasks.unshift({ id: globalThis.crypto?.randomUUID?.() || String(Date.now()), ...value, done: false }); save(); resetEditor(); render(); });
-  list.addEventListener(&#x27;change&#x27;, event =&gt; { const id = event.target.dataset.id; if (event.target.dataset.action !== &#x27;toggle&#x27;) return; tasks = tasks.map(t =&gt; t.id === id ? { ...t, done: event.target.checked } : t); save(); render(); });
-  list.addEventListener(&#x27;click&#x27;, event =&gt; { const button = event.target.closest(&#x27;button[data-action]&#x27;); if (!button) return; if (button.dataset.action === &#x27;edit&#x27;) { startEdit(button.dataset.id); return; } if (button.dataset.action === &#x27;delete&#x27;) { tasks = tasks.filter(t =&gt; t.id !== button.dataset.id); save(); render(); } });
-  filterWrap.addEventListener(&#x27;click&#x27;, event =&gt; { const button = event.target.closest(&#x27;button[data-filter]&#x27;); if (!button) return; filter = button.dataset.filter; filterWrap.querySelectorAll(&#x27;button&#x27;).forEach(b =&gt; { const selected = b === button; b.classList.toggle(&#x27;is-selected&#x27;, selected); b.setAttribute(&#x27;aria-pressed&#x27;, selected); }); render(); });
-  root.querySelector(&#x27;#clear-completed&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; { tasks = tasks.filter(t =&gt; !t.done); save(); render(); });
-  cancelEdit.addEventListener(&#x27;click&#x27;, resetEditor);
-  calendarGrid.addEventListener(&#x27;click&#x27;, event =&gt; { const button = event.target.closest(&#x27;button[data-edit-id]&#x27;); if (button) startEdit(button.dataset.editId); });
-  root.querySelector(&#x27;#previous-month&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; { monthCursor = new Date(monthCursor.getFullYear(), monthCursor.getMonth() - 1, 1); renderCalendar(); });
-  root.querySelector(&#x27;#next-month&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; { monthCursor = new Date(monthCursor.getFullYear(), monthCursor.getMonth() + 1, 1); renderCalendar(); });
-  themeToggle.addEventListener(&#x27;click&#x27;, () =&gt; setTheme(!root.classList.contains(&#x27;is-dark&#x27;)));
-  setTheme(localStorage.getItem(&#x27;school-tasks-theme&#x27;) === &#x27;dark&#x27;);
+  const setTheme = dark => { root.classList.toggle('is-dark', dark); themeToggle.textContent = dark ? '??깆뵠??筌뤴뫀諭? : '??쎄쾿 筌뤴뫀諭?; themeToggle.setAttribute('aria-pressed', dark); localStorage.setItem('school-tasks-theme', dark ? 'dark' : 'light'); };
+  const save = () => { localStorage.setItem('school-tasks-v1', JSON.stringify(tasks)); globalThis.saveSchoolTasks?.(tasks); };
+  const dateText = value => value ? new Intl.DateTimeFormat('ko-KR', { month: 'long', day: 'numeric', weekday: 'short' }).format(new Date(`${value}T00:00:00`)) : '筌띾뜃而??沃섎챷??;
+  const priorityText = { high: '?誘れ벉', medium: '癰귣똾??, low: '???? };
+  function visibleTasks() { const today = todayISO(); return tasks.filter(task => filter === 'all' || (filter === 'today' && task.due === today && !task.done) || (filter === 'active' && !task.done) || (filter === 'done' && task.done)).sort((a, b) => Number(a.done) - Number(b.done) || (a.due || '9999').localeCompare(b.due || '9999')); }
+  function updateStats() { const today = todayISO(); root.querySelector('#today-count').textContent = tasks.filter(t => !t.done && t.due === today).length; root.querySelector('#active-count').textContent = tasks.filter(t => !t.done).length; root.querySelector('#done-count').textContent = tasks.filter(t => t.done).length; }
+  function renderCalendar() { const year = monthCursor.getFullYear(), month = monthCursor.getMonth(), first = new Date(year, month, 1), start = first.getDay(), days = new Date(year, month + 1, 0).getDate(), prevDays = new Date(year, month, 0).getDate(); monthLabel.textContent = `${year}??${month + 1}??; let cells = ''; for (let index = 0; index < 42; index++) { const day = index - start + 1, inMonth = day >= 1 && day <= days, date = inMonth ? new Date(year, month, day) : index < start ? new Date(year, month - 1, prevDays - start + index + 1) : new Date(year, month + 1, day - days); const iso = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`; const matches = tasks.filter(t => t.due === iso).slice(0, 3); cells += `<div class="calendar-day ${inMonth ? '' : 'is-other'} ${iso === todayISO() ? 'is-today' : ''}"><time class="calendar-date" datetime="${iso}">${date.getDate()}</time>${matches.map(t => `<button type="button" class="calendar-task ${t.done ? 'is-done' : ''}" data-edit-id="${t.id}" aria-label="${escapeHTML(t.title)} ??륁젟">${escapeHTML(t.title)}</button>`).join('')}${tasks.filter(t => t.due === iso).length > 3 ? `<span class="text-small">+${tasks.filter(t => t.due === iso).length - 3}揶?lt;/span>` : ''}</div>`; } calendarGrid.innerHTML = cells; }
+  function render() { const shown = visibleTasks(); list.innerHTML = shown.map(task => { const late = !task.done && task.due && task.due < todayISO(); return `<article class="task-item ${task.done ? 'is-done' : ''}"><label class="form-check"><input class="form-check-input" type="checkbox" data-action="toggle" data-id="${task.id}" ${task.done ? 'checked' : ''} /><span class="sr-only">${task.done ? '沃섎챷?욜뙴??쨮 癰궰野?#x27; : '?袁⑥┷ 筌ｌ꼶??}</span></label><div class="task-main"><div><strong class="task-title">${escapeHTML(task.title)}</strong><div class="task-meta text-small"><span class="viz-badge">${escapeHTML(task.category)}</span><span class="due ${late ? 'is-late' : ''}">${late ? '疫꿸퀬釉?筌왖??夷?' : ''}${dateText(task.due)}</span><span class="priority ${task.priority}">${priorityText[task.priority]}</span></div></div></div><div class="task-actions"><button class="btn btn-ghost" type="button" data-action="edit" data-id="${task.id}">??륁젟</button><button class="btn btn-ghost" type="button" data-action="delete" data-id="${task.id}">????/button></div></article>`; }).join(''); empty.hidden = shown.length !== 0; updateStats(); renderCalendar(); }
+  function escapeHTML(value) { const node = document.createElement('span'); node.textContent = value; return node.innerHTML; }
+  function resetEditor() { editingId = null; form.reset(); priority.value = 'medium'; formHeading.textContent = '????끦?; submitTask.textContent = '??끦??곕떽?'; cancelEdit.hidden = true; }
+  function startEdit(id) { const task = tasks.find(t => t.id === id); if (!task) return; editingId = id; title.value = task.title; category.value = task.category; due.value = task.due; priority.value = task.priority; formHeading.textContent = '??끦???륁젟'; submitTask.textContent = '??륁젟 ????#x27;; cancelEdit.hidden = false; title.focus(); root.querySelector('.task-form-card').scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+  form.addEventListener('submit', event => { event.preventDefault(); const value = { title: title.value.trim(), category: category.value, due: due.value, priority: priority.value }; if (editingId) tasks = tasks.map(t => t.id === editingId ? { ...t, ...value } : t); else tasks.unshift({ id: globalThis.crypto?.randomUUID?.() || String(Date.now()), ...value, done: false }); save(); resetEditor(); render(); });
+  list.addEventListener('change', event => { const id = event.target.dataset.id; if (event.target.dataset.action !== 'toggle') return; tasks = tasks.map(t => t.id === id ? { ...t, done: event.target.checked } : t); save(); render(); });
+  list.addEventListener('click', event => { const button = event.target.closest('button[data-action]'); if (!button) return; if (button.dataset.action === 'edit') { startEdit(button.dataset.id); return; } if (button.dataset.action === 'delete') { tasks = tasks.filter(t => t.id !== button.dataset.id); save(); render(); } });
+  filterWrap.addEventListener('click', event => { const button = event.target.closest('button[data-filter]'); if (!button) return; filter = button.dataset.filter; filterWrap.querySelectorAll('button').forEach(b => { const selected = b === button; b.classList.toggle('is-selected', selected); b.setAttribute('aria-pressed', selected); }); render(); });
+  root.querySelector('#clear-completed').addEventListener('click', () => { tasks = tasks.filter(t => !t.done); save(); render(); });
+  cancelEdit.addEventListener('click', resetEditor);
+  calendarGrid.addEventListener('click', event => { const button = event.target.closest('button[data-edit-id]'); if (button) startEdit(button.dataset.editId); });
+  root.querySelector('#previous-month').addEventListener('click', () => { monthCursor = new Date(monthCursor.getFullYear(), monthCursor.getMonth() - 1, 1); renderCalendar(); });
+  root.querySelector('#next-month').addEventListener('click', () => { monthCursor = new Date(monthCursor.getFullYear(), monthCursor.getMonth() + 1, 1); renderCalendar(); });
+  themeToggle.addEventListener('click', () => setTheme(!root.classList.contains('is-dark')));
+  setTheme(localStorage.getItem('school-tasks-theme') === 'dark');
   render();
 })();
-&lt;/script&gt;
+</script>
 
-&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-(() =&gt; {
+<script src="https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js"></script>
+<script src="https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js"></script>
+<script>
+(() => {
   if (window.FloatingUIDOM == null) {
     return;
   }
   const { autoUpdate, computePosition, flip, offset, shift, size } =
     window.FloatingUIDOM;
-  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipPlacements = new Set(["top", "right", "bottom", "left"]);
   const tooltipId = `codex-visualization-tooltip-${
     window.crypto?.randomUUID?.() ?? Date.now().toString(36)
   }`;
@@ -751,30 +858,30 @@ textarea.form-control {
   let positionRequest = 0;
   let skipDelayUntil = 0;
 
-  const getTrigger = (target) =&gt;
+  const getTrigger = (target) =>
     target?.nodeType === Node.ELEMENT_NODE
-      ? target.closest(&quot;[data-tooltip]&quot;)
+      ? target.closest("[data-tooltip]")
       : null;
-  const containsTarget = (trigger, target) =&gt;
-    target?.nodeType != null &amp;&amp; trigger.contains(target);
-  const getContent = (trigger) =&gt;
-    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
-  const getPlacement = (trigger) =&gt; {
-    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
-    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  const containsTarget = (trigger, target) =>
+    target?.nodeType != null && trigger.contains(target);
+  const getContent = (trigger) =>
+    trigger.getAttribute("data-tooltip")?.trim() ?? "";
+  const getPlacement = (trigger) => {
+    const placement = trigger.getAttribute("data-tooltip-placement");
+    return tooltipPlacements.has(placement) ? placement : "top";
   };
-  const getTooltip = () =&gt; {
+  const getTooltip = () => {
     if (tooltip == null) {
-      tooltip = document.createElement(&quot;div&quot;);
+      tooltip = document.createElement("div");
       tooltip.id = tooltipId;
-      tooltip.className = &quot;tooltip&quot;;
-      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+      tooltip.className = "tooltip";
+      tooltip.setAttribute("role", "tooltip");
     }
     return tooltip;
   };
-  const setDescribedBy = (trigger, described) =&gt; {
+  const setDescribedBy = (trigger, described) => {
     const ids = new Set(
-      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+      (trigger.getAttribute("aria-describedby") ?? "")
         .split(/\s+/)
         .filter(Boolean),
     );
@@ -784,19 +891,19 @@ textarea.form-control {
       ids.delete(tooltipId);
     }
     if (ids.size === 0) {
-      trigger.removeAttribute(&quot;aria-describedby&quot;);
+      trigger.removeAttribute("aria-describedby");
     } else {
-      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+      trigger.setAttribute("aria-describedby", [...ids].join(" "));
     }
   };
-  const clearOpenTimeout = () =&gt; {
+  const clearOpenTimeout = () => {
     if (openTimeout != null) {
       window.clearTimeout(openTimeout);
       openTimeout = null;
     }
     pendingTrigger = null;
   };
-  const closeTooltip = (activateSkipDelay = true) =&gt; {
+  const closeTooltip = (activateSkipDelay = true) => {
     clearOpenTimeout();
     positionRequest += 1;
     autoUpdateCleanup?.();
@@ -811,7 +918,7 @@ textarea.form-control {
       skipDelayUntil = Date.now() + skipDelay;
     }
   };
-  const updatePosition = (trigger, floating) =&gt; {
+  const updatePosition = (trigger, floating) => {
     const request = ++positionRequest;
     void computePosition(trigger, floating, {
       middleware: [
@@ -822,34 +929,34 @@ textarea.form-control {
           padding: tooltipGap,
           apply({ availableHeight, availableWidth, elements }) {
             elements.floating.style.setProperty(
-              &quot;--tooltip-available-width&quot;,
+              "--tooltip-available-width",
               `${Math.max(0, availableWidth)}px`,
             );
             elements.floating.style.setProperty(
-              &quot;--tooltip-available-height&quot;,
+              "--tooltip-available-height",
               `${Math.max(0, availableHeight)}px`,
             );
           },
         }),
       ],
       placement: getPlacement(trigger),
-      strategy: &quot;fixed&quot;,
+      strategy: "fixed",
     })
-      .then(({ x, y }) =&gt; {
+      .then(({ x, y }) => {
         if (activeTrigger !== trigger || request !== positionRequest) {
           return;
         }
         const scale = window.devicePixelRatio || 1;
         floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
-        floating.style.visibility = &quot;visible&quot;;
+        floating.style.visibility = "visible";
       })
-      .catch(() =&gt; {
-        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+      .catch(() => {
+        if (activeTrigger === trigger && request === positionRequest) {
           closeTooltip(false);
         }
       });
   };
-  const openTooltip = (trigger) =&gt; {
+  const openTooltip = (trigger) => {
     const content = getContent(trigger);
     if (!trigger.isConnected || content.length === 0) {
       return;
@@ -861,16 +968,16 @@ textarea.form-control {
     closeTooltip();
     const floating = getTooltip();
     floating.textContent = content;
-    floating.style.visibility = &quot;hidden&quot;;
-    floating.style.transform = &quot;translate(0, 0)&quot;;
+    floating.style.visibility = "hidden";
+    floating.style.transform = "translate(0, 0)";
     document.body.appendChild(floating);
     activeTrigger = trigger;
     setDescribedBy(trigger, true);
-    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+    autoUpdateCleanup = autoUpdate(trigger, floating, () => {
       updatePosition(trigger, floating);
     });
   };
-  const requestOpen = (trigger, immediate = false) =&gt; {
+  const requestOpen = (trigger, immediate = false) => {
     if (
       getContent(trigger).length === 0 ||
       activeTrigger === trigger ||
@@ -881,21 +988,21 @@ textarea.form-control {
     clearOpenTimeout();
     pendingTrigger = trigger;
     const delay =
-      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+      immediate || activeTrigger != null || Date.now() < skipDelayUntil
         ? 0
         : hoverDelay;
     if (delay === 0) {
       openTooltip(trigger);
       return;
     }
-    openTimeout = window.setTimeout(() =&gt; {
+    openTimeout = window.setTimeout(() => {
       openTimeout = null;
       pendingTrigger = null;
       openTooltip(trigger);
     }, delay);
   };
-  const handlePointerOpen = (event) =&gt; {
-    if (event.pointerType === &quot;touch&quot;) {
+  const handlePointerOpen = (event) => {
+    if (event.pointerType === "touch") {
       return;
     }
     const trigger = getTrigger(event.target);
@@ -904,7 +1011,7 @@ textarea.form-control {
     }
     requestOpen(trigger);
   };
-  const handleLeave = (event) =&gt; {
+  const handleLeave = (event) => {
     const trigger = getTrigger(event.target);
     if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
       return;
@@ -913,47 +1020,47 @@ textarea.form-control {
       closeTooltip();
     }
   };
-  const handleFocusIn = (event) =&gt; {
+  const handleFocusIn = (event) => {
     const trigger = getTrigger(event.target);
-    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+    if (trigger?.matches(":focus-visible")) {
       requestOpen(trigger, true);
     }
   };
-  const handleKeyDown = (event) =&gt; {
-    if (event.key === &quot;Escape&quot;) {
+  const handleKeyDown = (event) => {
+    if (event.key === "Escape") {
       closeTooltip();
     }
   };
-  const handleContextMenu = (event) =&gt; {
+  const handleContextMenu = (event) => {
     const trigger = getTrigger(event.target);
     if (activeTrigger === trigger || pendingTrigger === trigger) {
       closeTooltip();
     }
   };
-  const destroy = () =&gt; {
+  const destroy = () => {
     closeTooltip(false);
-    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
-    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
-    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
-    document.removeEventListener(&quot;focusout&quot;, handleLeave);
-    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
-    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    document.removeEventListener("pointerover", handlePointerOpen);
+    document.removeEventListener("pointerout", handleLeave);
+    document.removeEventListener("focusin", handleFocusIn);
+    document.removeEventListener("focusout", handleLeave);
+    document.removeEventListener("keydown", handleKeyDown);
+    document.removeEventListener("contextmenu", handleContextMenu);
     tooltip = null;
   };
 
-  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
-  document.addEventListener(&quot;pointerout&quot;, handleLeave);
-  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
-  document.addEventListener(&quot;focusout&quot;, handleLeave);
-  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
-  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
-  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+  document.addEventListener("pointerover", handlePointerOpen);
+  document.addEventListener("pointerout", handleLeave);
+  document.addEventListener("focusin", handleFocusIn);
+  document.addEventListener("focusout", handleLeave);
+  document.addEventListener("keydown", handleKeyDown);
+  document.addEventListener("contextmenu", handleContextMenu);
+  window.addEventListener("pagehide", destroy, { once: true });
 })();
-&lt;/script&gt;
-&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-(() =&gt; {
-  const initialize = () =&gt; {
+</script>
+<script id="codex-visualization-lucide" async src="https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js"></script>
+<script>
+(() => {
+  const initialize = () => {
     globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
   };
   if (globalThis.lucide != null) {
@@ -961,14 +1068,13 @@ textarea.form-control {
     return;
   }
   document
-    .getElementById(&quot;codex-visualization-lucide&quot;)
-    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+    .getElementById("codex-visualization-lucide")
+    ?.addEventListener("load", initialize, { once: true });
 })();
-&lt;/script&gt;
+</script>
 
-&lt;/body&gt;
-&lt;/html&gt;
-"></iframe>
 </body>
 </html>
+
+
 
