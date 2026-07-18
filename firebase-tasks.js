@@ -1,6 +1,3 @@
-Exit code: 0
-Wall time: 0.6 seconds
-Output:
 const firebaseConfig = {
   apiKey: "AIzaSyChzl-aDFuJsE1by_eTJ4gB8mj-mi3N9z8",
   authDomain: "school-todo-giftedu12.firebaseapp.com",
