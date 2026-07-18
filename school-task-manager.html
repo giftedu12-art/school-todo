@@ -1,0 +1,1180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>School Task Manager</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;max-width:736px;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+</head>
+<body>
+<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="School Task Manager" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;School Task Manager&lt;/title&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(--background) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: light-dark(rgb(255 255 255), rgb(24 24 24));
+  --foreground: light-dark(rgb(26 28 31), rgb(255 255 255));
+  --card: color-mix(in oklab, var(--foreground) 5%, transparent);
+  --card-foreground: var(--foreground);
+  --popover: light-dark(rgb(255 255 255), rgb(45 45 45));
+  --popover-foreground: var(--foreground);
+  --primary: light-dark(rgb(51 156 255), rgb(131 195 255));
+  --primary-foreground: light-dark(rgb(255 255 255), rgb(13 13 13));
+  --secondary: light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%));
+  --secondary-foreground: var(--foreground);
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: light-dark(
+    rgb(26 28 31 / 49.4%),
+    rgb(255 255 255 / 49.8%)
+  );
+  --accent: light-dark(rgb(229 242 255), rgb(13 39 63));
+  --accent-foreground: var(--primary);
+  --destructive: light-dark(rgb(226 85 7), rgb(255 133 73));
+  --border: light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%));
+  --input: light-dark(
+    rgb(26 28 31 / 11.8%),
+    color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+  );
+  --ring: light-dark(rgb(51 156 255), rgb(131 195 255 / 76%));
+  --font-size-base: 14px;
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --radius: 12.5px;
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+  --color-background-primary: var(--background);
+  --color-text-primary: var(--foreground);
+  --color-border-secondary: var(--border);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  margin: 0;
+  padding: 5px;
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--viz-font-weight-medium);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: superellipse(1.5);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget &gt; :not(.card) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: superellipse(1.5);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+    [aria-pressed=&quot;true&quot;],
+    [aria-selected=&quot;true&quot;],
+    .is-selected
+  ) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;main id=&quot;school-task-manager&quot;&gt;
+  &lt;header class=&quot;page-head&quot;&gt;
+    &lt;div&gt;&lt;p class=&quot;eyebrow&quot;&gt;SCHOOL WORKSPACE&lt;/p&gt;&lt;h1&gt;학교 업무 To-do&lt;/h1&gt;&lt;p class=&quot;text-muted&quot;&gt;수업, 행정, 상담 업무를 한곳에서 관리하세요.&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;header-actions&quot;&gt;&lt;button id=&quot;theme-toggle&quot; class=&quot;btn&quot; type=&quot;button&quot; aria-pressed=&quot;false&quot;&gt;다크 모드&lt;/button&gt;&lt;button id=&quot;clear-completed&quot; class=&quot;btn btn-ghost&quot; type=&quot;button&quot;&gt;완료 항목 정리&lt;/button&gt;&lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;section class=&quot;viz-grid&quot; aria-label=&quot;업무 현황&quot;&gt;
+    &lt;article class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;오늘 마감&lt;/span&gt;&lt;strong id=&quot;today-count&quot; class=&quot;viz-stat-value&quot;&gt;0&lt;/strong&gt;&lt;/article&gt;
+    &lt;article class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;진행 중&lt;/span&gt;&lt;strong id=&quot;active-count&quot; class=&quot;viz-stat-value&quot;&gt;0&lt;/strong&gt;&lt;/article&gt;
+    &lt;article class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;완료&lt;/span&gt;&lt;strong id=&quot;done-count&quot; class=&quot;viz-stat-value&quot;&gt;0&lt;/strong&gt;&lt;/article&gt;
+  &lt;/section&gt;
+
+  &lt;section class=&quot;card task-form-card&quot; aria-labelledby=&quot;new-task-heading&quot;&gt;
+    &lt;h2 id=&quot;new-task-heading&quot;&gt;새 업무&lt;/h2&gt;
+    &lt;form id=&quot;task-form&quot;&gt;
+      &lt;label class=&quot;form-label&quot;&gt;업무 내용&lt;input id=&quot;task-title&quot; class=&quot;form-control&quot; required maxlength=&quot;80&quot; placeholder=&quot;예: 2학년 3반 수행평가 채점&quot; /&gt;&lt;/label&gt;
+      &lt;div class=&quot;form-fields&quot;&gt;
+        &lt;label class=&quot;form-label&quot;&gt;분류&lt;select id=&quot;task-category&quot; class=&quot;form-select&quot;&gt;&lt;option&gt;수업·평가&lt;/option&gt;&lt;option&gt;행정·공문&lt;/option&gt;&lt;option&gt;학생 상담&lt;/option&gt;&lt;option&gt;학부모 소통&lt;/option&gt;&lt;option&gt;회의·연수&lt;/option&gt;&lt;option&gt;기타&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;
+        &lt;label class=&quot;form-label&quot;&gt;마감일&lt;input id=&quot;task-due&quot; class=&quot;form-control&quot; type=&quot;date&quot; /&gt;&lt;/label&gt;
+        &lt;label class=&quot;form-label&quot;&gt;우선순위&lt;select id=&quot;task-priority&quot; class=&quot;form-select&quot;&gt;&lt;option value=&quot;high&quot;&gt;높음&lt;/option&gt;&lt;option value=&quot;medium&quot; selected&gt;보통&lt;/option&gt;&lt;option value=&quot;low&quot;&gt;낮음&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;form-actions&quot;&gt;&lt;button id=&quot;submit-task&quot; class=&quot;btn btn-primary&quot; type=&quot;submit&quot;&gt;업무 추가&lt;/button&gt;&lt;button id=&quot;cancel-edit&quot; class=&quot;btn btn-ghost&quot; type=&quot;button&quot; hidden&gt;수정 취소&lt;/button&gt;&lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+
+  &lt;section class=&quot;calendar-section&quot; aria-labelledby=&quot;calendar-heading&quot;&gt;
+    &lt;div class=&quot;section-row&quot;&gt;&lt;h2 id=&quot;calendar-heading&quot;&gt;월간 일정&lt;/h2&gt;&lt;div class=&quot;calendar-nav&quot;&gt;&lt;button id=&quot;previous-month&quot; class=&quot;btn&quot; type=&quot;button&quot; aria-label=&quot;이전 달&quot;&gt;←&lt;/button&gt;&lt;strong id=&quot;month-label&quot;&gt;&lt;/strong&gt;&lt;button id=&quot;next-month&quot; class=&quot;btn&quot; type=&quot;button&quot; aria-label=&quot;다음 달&quot;&gt;→&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;calendar-weekdays&quot; aria-hidden=&quot;true&quot;&gt;&lt;span&gt;일&lt;/span&gt;&lt;span&gt;월&lt;/span&gt;&lt;span&gt;화&lt;/span&gt;&lt;span&gt;수&lt;/span&gt;&lt;span&gt;목&lt;/span&gt;&lt;span&gt;금&lt;/span&gt;&lt;span&gt;토&lt;/span&gt;&lt;/div&gt;
+    &lt;div id=&quot;calendar-grid&quot; class=&quot;calendar-grid&quot; aria-label=&quot;월간 업무 달력&quot;&gt;&lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;section class=&quot;task-section&quot; aria-labelledby=&quot;tasks-heading&quot;&gt;
+    &lt;div class=&quot;section-row&quot;&gt;&lt;h2 id=&quot;tasks-heading&quot;&gt;업무 목록&lt;/h2&gt;&lt;div id=&quot;filters&quot; class=&quot;viz-controls&quot; aria-label=&quot;업무 필터&quot;&gt;&lt;button class=&quot;btn is-selected&quot; type=&quot;button&quot; data-filter=&quot;all&quot; aria-pressed=&quot;true&quot;&gt;전체&lt;/button&gt;&lt;button class=&quot;btn&quot; type=&quot;button&quot; data-filter=&quot;today&quot; aria-pressed=&quot;false&quot;&gt;오늘&lt;/button&gt;&lt;button class=&quot;btn&quot; type=&quot;button&quot; data-filter=&quot;active&quot; aria-pressed=&quot;false&quot;&gt;진행 중&lt;/button&gt;&lt;button class=&quot;btn&quot; type=&quot;button&quot; data-filter=&quot;done&quot; aria-pressed=&quot;false&quot;&gt;완료&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div id=&quot;task-list&quot; class=&quot;task-list&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
+    &lt;p id=&quot;empty-state&quot; class=&quot;text-muted empty-state&quot; hidden&gt;표시할 업무가 없습니다.&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+
+&lt;style&gt;
+  #school-task-manager { max-width: 920px; margin: 0 auto; color: var(--foreground); }
+  #school-task-manager.is-dark { --background: #10131a; --foreground: #f2f5fa; --card: #1a202b; --card-foreground: #f2f5fa; --popover: #1a202b; --popover-foreground: #f2f5fa; --muted: #252c39; --muted-foreground: #b5bfce; --border: #3b4556; --input: #222a36; --primary: #6da9ff; --primary-foreground: #071525; --accent: #273850; --accent-foreground: #eff6ff; --destructive: #ff858d; background: var(--background); padding: 1rem; border-radius: .75rem; }
+  #school-task-manager h1, #school-task-manager h2, #school-task-manager p { margin: 0; }
+  #school-task-manager h1, #school-task-manager h2 { font-weight: 500; }
+  #school-task-manager h2 { font-size: 1.05em; }
+  #school-task-manager .page-head, #school-task-manager .section-row, #school-task-manager .task-meta, #school-task-manager .task-main, #school-task-manager .task-actions, #school-task-manager .header-actions, #school-task-manager .form-actions, #school-task-manager .calendar-nav { display: flex; align-items: center; }
+  #school-task-manager .page-head, #school-task-manager .section-row { justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  #school-task-manager .eyebrow { color: var(--muted-foreground); font-size: .78em; letter-spacing: .12em; }
+  #school-task-manager .page-head .text-muted { margin-top: .35rem; }
+  #school-task-manager .viz-grid { margin-bottom: 1rem; }
+  #school-task-manager .task-form-card { margin-bottom: 1.35rem; }
+  #school-task-manager .task-form-card h2 { margin-bottom: .8rem; }
+  #school-task-manager .form-fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem; margin: .7rem 0 1rem; }
+  #school-task-manager .header-actions, #school-task-manager .form-actions, #school-task-manager .calendar-nav { gap: .55rem; flex-wrap: wrap; }
+  #school-task-manager .task-list { display: grid; gap: .65rem; }
+  #school-task-manager .task-item { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: .8rem; padding: .85rem 0; border-bottom: 1px solid var(--border); }
+  #school-task-manager .task-item:first-child { border-top: 1px solid var(--border); }
+  #school-task-manager .task-main { min-width: 0; gap: .75rem; }
+  #school-task-manager .task-title { overflow-wrap: anywhere; }
+  #school-task-manager .task-item.is-done .task-title { color: var(--muted-foreground); text-decoration: line-through; }
+  #school-task-manager .task-meta { gap: .55rem; flex-wrap: wrap; }
+  #school-task-manager .due { color: var(--muted-foreground); }
+  #school-task-manager .due.is-late { color: var(--destructive); }
+  #school-task-manager .priority { display: inline-flex; align-items: center; gap: .3rem; color: var(--muted-foreground); }
+  #school-task-manager .priority::before { content: &#x27;&#x27;; width: .55rem; height: .55rem; border-radius: 50%; background: var(--muted-foreground); }
+  #school-task-manager .priority.high::before { background: var(--destructive); }
+  #school-task-manager .priority.medium::before { background: var(--viz-series-2); }
+  #school-task-manager .priority.low::before { background: var(--viz-series-1); }
+  #school-task-manager .task-actions { gap: .35rem; }
+  #school-task-manager .empty-state { padding: 1.1rem 0; }
+  #school-task-manager .calendar-section { margin: 1.4rem 0; }
+  #school-task-manager .calendar-weekdays, #school-task-manager .calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+  #school-task-manager .calendar-weekdays { color: var(--muted-foreground); text-align: center; margin-bottom: .35rem; }
+  #school-task-manager .calendar-weekdays span { padding: .35rem 0; }
+  #school-task-manager .calendar-day { min-height: 92px; padding: .38rem; border: 1px solid var(--border); border-width: 1px 0 0 1px; overflow: hidden; }
+  #school-task-manager .calendar-day:nth-child(7n) { border-right-width: 1px; }
+  #school-task-manager .calendar-day:nth-last-child(-n+7) { border-bottom-width: 1px; }
+  #school-task-manager .calendar-day.is-other { color: var(--muted-foreground); background: var(--muted); }
+  #school-task-manager .calendar-day.is-today { box-shadow: inset 0 0 0 2px var(--ring); }
+  #school-task-manager .calendar-date { display: block; text-align: right; margin-bottom: .25rem; }
+  #school-task-manager .calendar-task { display: block; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; margin: .18rem 0 0; padding: .16rem .24rem; border: 0; border-left: 3px solid var(--viz-series-1); background: var(--accent); color: var(--accent-foreground); cursor: pointer; }
+  #school-task-manager .calendar-task.is-done { opacity: .58; text-decoration: line-through; }
+  @media (max-width: 600px) { #school-task-manager .form-fields { grid-template-columns: 1fr; } #school-task-manager .task-item { grid-template-columns: auto 1fr; } #school-task-manager .task-actions { grid-column: 2; } #school-task-manager .calendar-day { min-height: 70px; padding: .22rem; } #school-task-manager .calendar-task { font-size: .73em; } }
+&lt;/style&gt;
+
+&lt;script&gt;
+(() =&gt; {
+  const root = document.getElementById(&#x27;school-task-manager&#x27;);
+  const form = root.querySelector(&#x27;#task-form&#x27;), list = root.querySelector(&#x27;#task-list&#x27;), empty = root.querySelector(&#x27;#empty-state&#x27;);
+  const title = root.querySelector(&#x27;#task-title&#x27;), category = root.querySelector(&#x27;#task-category&#x27;), due = root.querySelector(&#x27;#task-due&#x27;), priority = root.querySelector(&#x27;#task-priority&#x27;);
+  const formHeading = root.querySelector(&#x27;#new-task-heading&#x27;), submitTask = root.querySelector(&#x27;#submit-task&#x27;), cancelEdit = root.querySelector(&#x27;#cancel-edit&#x27;);
+  const filterWrap = root.querySelector(&#x27;#filters&#x27;), calendarGrid = root.querySelector(&#x27;#calendar-grid&#x27;), monthLabel = root.querySelector(&#x27;#month-label&#x27;);
+  const themeToggle = root.querySelector(&#x27;#theme-toggle&#x27;); let filter = &#x27;all&#x27;, editingId = null, monthCursor = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
+  const todayISO = () =&gt; new Date().toISOString().slice(0, 10);
+  const load = () =&gt; { try { return JSON.parse(localStorage.getItem(&#x27;school-tasks-v1&#x27;)) || []; } catch { return []; } };
+  let tasks = load();
+  const setTheme = dark =&gt; { root.classList.toggle(&#x27;is-dark&#x27;, dark); themeToggle.textContent = dark ? &#x27;라이트 모드&#x27; : &#x27;다크 모드&#x27;; themeToggle.setAttribute(&#x27;aria-pressed&#x27;, dark); localStorage.setItem(&#x27;school-tasks-theme&#x27;, dark ? &#x27;dark&#x27; : &#x27;light&#x27;); };
+  const save = () =&gt; localStorage.setItem(&#x27;school-tasks-v1&#x27;, JSON.stringify(tasks));
+  const dateText = value =&gt; value ? new Intl.DateTimeFormat(&#x27;ko-KR&#x27;, { month: &#x27;long&#x27;, day: &#x27;numeric&#x27;, weekday: &#x27;short&#x27; }).format(new Date(`${value}T00:00:00`)) : &#x27;마감일 미정&#x27;;
+  const priorityText = { high: &#x27;높음&#x27;, medium: &#x27;보통&#x27;, low: &#x27;낮음&#x27; };
+  function visibleTasks() { const today = todayISO(); return tasks.filter(task =&gt; filter === &#x27;all&#x27; || (filter === &#x27;today&#x27; &amp;&amp; task.due === today &amp;&amp; !task.done) || (filter === &#x27;active&#x27; &amp;&amp; !task.done) || (filter === &#x27;done&#x27; &amp;&amp; task.done)).sort((a, b) =&gt; Number(a.done) - Number(b.done) || (a.due || &#x27;9999&#x27;).localeCompare(b.due || &#x27;9999&#x27;)); }
+  function updateStats() { const today = todayISO(); root.querySelector(&#x27;#today-count&#x27;).textContent = tasks.filter(t =&gt; !t.done &amp;&amp; t.due === today).length; root.querySelector(&#x27;#active-count&#x27;).textContent = tasks.filter(t =&gt; !t.done).length; root.querySelector(&#x27;#done-count&#x27;).textContent = tasks.filter(t =&gt; t.done).length; }
+  function renderCalendar() { const year = monthCursor.getFullYear(), month = monthCursor.getMonth(), first = new Date(year, month, 1), start = first.getDay(), days = new Date(year, month + 1, 0).getDate(), prevDays = new Date(year, month, 0).getDate(); monthLabel.textContent = `${year}년 ${month + 1}월`; let cells = &#x27;&#x27;; for (let index = 0; index &lt; 42; index++) { const day = index - start + 1, inMonth = day &gt;= 1 &amp;&amp; day &lt;= days, date = inMonth ? new Date(year, month, day) : index &lt; start ? new Date(year, month - 1, prevDays - start + index + 1) : new Date(year, month + 1, day - days); const iso = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, &#x27;0&#x27;)}-${String(date.getDate()).padStart(2, &#x27;0&#x27;)}`; const matches = tasks.filter(t =&gt; t.due === iso).slice(0, 3); cells += `&lt;div class=&quot;calendar-day ${inMonth ? &#x27;&#x27; : &#x27;is-other&#x27;} ${iso === todayISO() ? &#x27;is-today&#x27; : &#x27;&#x27;}&quot;&gt;&lt;time class=&quot;calendar-date&quot; datetime=&quot;${iso}&quot;&gt;${date.getDate()}&lt;/time&gt;${matches.map(t =&gt; `&lt;button type=&quot;button&quot; class=&quot;calendar-task ${t.done ? &#x27;is-done&#x27; : &#x27;&#x27;}&quot; data-edit-id=&quot;${t.id}&quot; aria-label=&quot;${escapeHTML(t.title)} 수정&quot;&gt;${escapeHTML(t.title)}&lt;/button&gt;`).join(&#x27;&#x27;)}${tasks.filter(t =&gt; t.due === iso).length &gt; 3 ? `&lt;span class=&quot;text-small&quot;&gt;+${tasks.filter(t =&gt; t.due === iso).length - 3}개&lt;/span&gt;` : &#x27;&#x27;}&lt;/div&gt;`; } calendarGrid.innerHTML = cells; }
+  function render() { const shown = visibleTasks(); list.innerHTML = shown.map(task =&gt; { const late = !task.done &amp;&amp; task.due &amp;&amp; task.due &lt; todayISO(); return `&lt;article class=&quot;task-item ${task.done ? &#x27;is-done&#x27; : &#x27;&#x27;}&quot;&gt;&lt;label class=&quot;form-check&quot;&gt;&lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; data-action=&quot;toggle&quot; data-id=&quot;${task.id}&quot; ${task.done ? &#x27;checked&#x27; : &#x27;&#x27;} /&gt;&lt;span class=&quot;sr-only&quot;&gt;${task.done ? &#x27;미완료로 변경&#x27; : &#x27;완료 처리&#x27;}&lt;/span&gt;&lt;/label&gt;&lt;div class=&quot;task-main&quot;&gt;&lt;div&gt;&lt;strong class=&quot;task-title&quot;&gt;${escapeHTML(task.title)}&lt;/strong&gt;&lt;div class=&quot;task-meta text-small&quot;&gt;&lt;span class=&quot;viz-badge&quot;&gt;${escapeHTML(task.category)}&lt;/span&gt;&lt;span class=&quot;due ${late ? &#x27;is-late&#x27; : &#x27;&#x27;}&quot;&gt;${late ? &#x27;기한 지남 · &#x27; : &#x27;&#x27;}${dateText(task.due)}&lt;/span&gt;&lt;span class=&quot;priority ${task.priority}&quot;&gt;${priorityText[task.priority]}&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;task-actions&quot;&gt;&lt;button class=&quot;btn btn-ghost&quot; type=&quot;button&quot; data-action=&quot;edit&quot; data-id=&quot;${task.id}&quot;&gt;수정&lt;/button&gt;&lt;button class=&quot;btn btn-ghost&quot; type=&quot;button&quot; data-action=&quot;delete&quot; data-id=&quot;${task.id}&quot;&gt;삭제&lt;/button&gt;&lt;/div&gt;&lt;/article&gt;`; }).join(&#x27;&#x27;); empty.hidden = shown.length !== 0; updateStats(); renderCalendar(); }
+  function escapeHTML(value) { const node = document.createElement(&#x27;span&#x27;); node.textContent = value; return node.innerHTML; }
+  function resetEditor() { editingId = null; form.reset(); priority.value = &#x27;medium&#x27;; formHeading.textContent = &#x27;새 업무&#x27;; submitTask.textContent = &#x27;업무 추가&#x27;; cancelEdit.hidden = true; }
+  function startEdit(id) { const task = tasks.find(t =&gt; t.id === id); if (!task) return; editingId = id; title.value = task.title; category.value = task.category; due.value = task.due; priority.value = task.priority; formHeading.textContent = &#x27;업무 수정&#x27;; submitTask.textContent = &#x27;수정 저장&#x27;; cancelEdit.hidden = false; title.focus(); root.querySelector(&#x27;.task-form-card&#x27;).scrollIntoView({ behavior: &#x27;smooth&#x27;, block: &#x27;center&#x27; }); }
+  form.addEventListener(&#x27;submit&#x27;, event =&gt; { event.preventDefault(); const value = { title: title.value.trim(), category: category.value, due: due.value, priority: priority.value }; if (editingId) tasks = tasks.map(t =&gt; t.id === editingId ? { ...t, ...value } : t); else tasks.unshift({ id: globalThis.crypto?.randomUUID?.() || String(Date.now()), ...value, done: false }); save(); resetEditor(); render(); });
+  list.addEventListener(&#x27;change&#x27;, event =&gt; { const id = event.target.dataset.id; if (event.target.dataset.action !== &#x27;toggle&#x27;) return; tasks = tasks.map(t =&gt; t.id === id ? { ...t, done: event.target.checked } : t); save(); render(); });
+  list.addEventListener(&#x27;click&#x27;, event =&gt; { const button = event.target.closest(&#x27;button[data-action]&#x27;); if (!button) return; if (button.dataset.action === &#x27;edit&#x27;) { startEdit(button.dataset.id); return; } if (button.dataset.action === &#x27;delete&#x27;) { tasks = tasks.filter(t =&gt; t.id !== button.dataset.id); save(); render(); } });
+  filterWrap.addEventListener(&#x27;click&#x27;, event =&gt; { const button = event.target.closest(&#x27;button[data-filter]&#x27;); if (!button) return; filter = button.dataset.filter; filterWrap.querySelectorAll(&#x27;button&#x27;).forEach(b =&gt; { const selected = b === button; b.classList.toggle(&#x27;is-selected&#x27;, selected); b.setAttribute(&#x27;aria-pressed&#x27;, selected); }); render(); });
+  root.querySelector(&#x27;#clear-completed&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; { tasks = tasks.filter(t =&gt; !t.done); save(); render(); });
+  cancelEdit.addEventListener(&#x27;click&#x27;, resetEditor);
+  calendarGrid.addEventListener(&#x27;click&#x27;, event =&gt; { const button = event.target.closest(&#x27;button[data-edit-id]&#x27;); if (button) startEdit(button.dataset.editId); });
+  root.querySelector(&#x27;#previous-month&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; { monthCursor = new Date(monthCursor.getFullYear(), monthCursor.getMonth() - 1, 1); renderCalendar(); });
+  root.querySelector(&#x27;#next-month&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; { monthCursor = new Date(monthCursor.getFullYear(), monthCursor.getMonth() + 1, 1); renderCalendar(); });
+  themeToggle.addEventListener(&#x27;click&#x27;, () =&gt; setTheme(!root.classList.contains(&#x27;is-dark&#x27;)));
+  setTheme(localStorage.getItem(&#x27;school-tasks-theme&#x27;) === &#x27;dark&#x27;);
+  render();
+})();
+&lt;/script&gt;
+
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+
+  const getTrigger = (target) =&gt;
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest(&quot;[data-tooltip]&quot;)
+      : null;
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handleLeave = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
+    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
+    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
+    document.removeEventListener(&quot;focusout&quot;, handleLeave);
+    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
+    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
+  document.addEventListener(&quot;pointerout&quot;, handleLeave);
+  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
+  document.addEventListener(&quot;focusout&quot;, handleLeave);
+  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
+  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+</body>
+</html>
